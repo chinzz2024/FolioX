@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'planner_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,7 +19,20 @@ class _HomePageState extends State<HomePage> {
     ProfilePage(),
   ];
 
-
+  // Function to handle bottom navigation
+  void _onItemTapped(int index) {
+    if (index == 1) {
+      // Navigate to PlannerPage
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const PlannerPage()),
+      );
+    } else {
+      setState(() {
+        _selectedIndex = index;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +48,8 @@ class _HomePageState extends State<HomePage> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        
-  
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.trending_up),

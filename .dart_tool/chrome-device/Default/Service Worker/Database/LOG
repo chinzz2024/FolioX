@@ -1,2 +1,19 @@
-2024/12/09-01:33:14.691 d38 Creating DB C:\Users\a4ale\AppData\Local\Temp\flutter_tools.d3c0d803\flutter_tools_chrome_device.dbf9d08b\Default\Service Worker\Database since it was missing.
-2024/12/09-01:33:15.383 d38 Reusing MANIFEST C:\Users\a4ale\AppData\Local\Temp\flutter_tools.d3c0d803\flutter_tools_chrome_device.dbf9d08b\Default\Service Worker\Database/MANIFEST-000001
+2024/12/09-22:02:14.800 308 Recovering log #19
+2024/12/09-22:02:15.151 308 Level-0 table #21: started
+2024/12/09-22:02:15.352 308 Level-0 table #21: 559 bytes OK
+2024/12/09-22:02:15.564 308 Delete type=0 #3
+2024/12/09-22:02:15.564 308 Delete type=2 #5
+2024/12/09-22:02:15.564 308 Delete type=0 #6
+2024/12/09-22:02:15.565 308 Delete type=2 #8
+2024/12/09-22:02:15.565 308 Delete type=0 #9
+2024/12/09-22:02:15.565 308 Delete type=2 #11
+2024/12/09-22:02:15.566 308 Delete type=0 #12
+2024/12/09-22:02:15.566 308 Delete type=0 #15
+2024/12/09-22:02:15.566 308 Delete type=0 #19
+2024/12/09-22:02:15.566 308 Delete type=3 #1
+2024/12/09-22:02:15.567 308 Delete type=3 #2
+2024/12/09-22:02:15.567 308 Delete type=3 #4
+2024/12/09-22:02:15.567 308 Delete type=3 #7
+2024/12/09-22:02:15.601 308 Delete type=3 #10
+2024/12/09-22:02:15.601 308 Delete type=3 #13
+2024/12/09-22:02:15.601 308 Delete type=3 #17
