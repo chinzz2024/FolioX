@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "898393754970",
+    "project_id": "foliox-e75a6",
+    "storage_bucket": "foliox-e75a6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898393754970:android:4a9183573bb8ab4dd6b763",
+        "android_client_info": {
+          "package_name": "com.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfm-HKelE7RqjhEm3ZfQzZMJBtupHc6bQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
