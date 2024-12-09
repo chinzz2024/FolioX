@@ -1,27 +1,21 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
-import 'second_screen.dart';
-import 'third_screen.dart';
+import 'login_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'My App',
       theme: ThemeData(
-        primaryColor: Colors.blueGrey,
+        primarySwatch: Colors.deepPurple,
       ),
-      initialRoute: '/', // Set the initial route to HomeScreen
-      routes: {
-        '/': (context) => const HomeScreen(),
-        '/second': (context) => const SecondScreen(),
-        '/third': (context) => const ThirdScreen(),
-      },
+      home: LoginPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
+
