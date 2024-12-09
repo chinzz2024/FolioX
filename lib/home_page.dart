@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -19,7 +18,12 @@ class _HomePageState extends State<HomePage> {
     ProfilePage(),
   ];
 
-
+  // Method to handle index changes
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +39,6 @@ class _HomePageState extends State<HomePage> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        
-  
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.trending_up),
@@ -51,8 +53,10 @@ class _HomePageState extends State<HomePage> {
             label: 'Profile',
           ),
         ],
+        currentIndex: _selectedIndex, // Set the current selected index
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
+        onTap: _onItemTapped, // Update index on tap
       ),
     );
   }
