@@ -3,6 +3,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'login_page.dart';
 import 'firebase_options.dart';
 
+<<<<<<< HEAD
+=======
+void main() {
+>>>>>>> 81ce94dcadbd054e80f06615b3155208d2a86472
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(

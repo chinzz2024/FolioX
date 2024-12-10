@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 81ce94dcadbd054e80f06615b3155208d2a86472
 import 'planner_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -33,6 +36,14 @@ class _HomePageState extends State<HomePage> {
         _selectedIndex = index;
       });
     }
+<<<<<<< HEAD
+=======
+  // Method to handle index changes
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+>>>>>>> 81ce94dcadbd054e80f06615b3155208d2a86472
   }
 
   @override
