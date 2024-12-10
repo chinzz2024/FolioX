@@ -236,13 +236,13 @@
       "languageVersion": "3.4"
     },
     {
-      "name": "myr_project",
+      "name": "my_project",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-12-09T18:01:28.378208Z",
+  "generated": "2024-12-10T16:46:56.307890Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///C:/Users/a4ale/flutter",
