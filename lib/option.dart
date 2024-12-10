@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'govt_page.dart';
 
 class EmploymentOptionPage extends StatelessWidget {
   const EmploymentOptionPage({Key? key}) : super(key: key);
@@ -11,7 +12,7 @@ class EmploymentOptionPage extends StatelessWidget {
           'Select Employment Type',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: const Color.fromARGB(255, 12, 6, 37),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -24,14 +25,11 @@ class EmploymentOptionPage extends StatelessWidget {
                 // Logic for Government Employee selection
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        const PlaceholderPage(title: 'Government Employee'),
-                  ),
+                  MaterialPageRoute(builder: (context) => IncomePage()),
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: const Color.fromARGB(255, 10, 42, 68),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
               ),
@@ -50,7 +48,7 @@ class EmploymentOptionPage extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
+                backgroundColor: const Color.fromARGB(255, 28, 82, 107),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
               ),
@@ -69,7 +67,7 @@ class EmploymentOptionPage extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange,
+                backgroundColor: const Color.fromARGB(255, 71, 121, 134),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
               ),

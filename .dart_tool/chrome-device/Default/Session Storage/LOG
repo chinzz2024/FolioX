@@ -1,25 +1,5 @@
-<<<<<<< HEAD
-2024/12/09-22:02:18.849 1cf8 Recovering log #19
-2024/12/09-22:02:18.850 1cf8 Level-0 table #21: started
-2024/12/09-22:02:19.011 1cf8 Level-0 table #21: 216 bytes OK
-2024/12/09-22:02:19.092 1cf8 Delete type=0 #3
-2024/12/09-22:02:19.093 1cf8 Delete type=2 #5
-2024/12/09-22:02:19.093 1cf8 Delete type=0 #6
-2024/12/09-22:02:19.093 1cf8 Delete type=2 #8
-2024/12/09-22:02:19.094 1cf8 Delete type=0 #9
-2024/12/09-22:02:19.094 1cf8 Delete type=2 #11
-2024/12/09-22:02:19.094 1cf8 Delete type=0 #12
-2024/12/09-22:02:19.094 1cf8 Delete type=0 #15
-2024/12/09-22:02:19.094 1cf8 Delete type=0 #19
-2024/12/09-22:02:19.094 1cf8 Delete type=3 #1
-2024/12/09-22:02:19.095 1cf8 Delete type=3 #2
-2024/12/09-22:02:19.095 1cf8 Delete type=3 #4
-2024/12/09-22:02:19.095 1cf8 Delete type=3 #7
-2024/12/09-22:02:19.124 1cf8 Delete type=3 #10
-2024/12/09-22:02:19.124 1cf8 Delete type=3 #13
-2024/12/09-22:02:19.125 1cf8 Delete type=3 #17
-=======
-2024/12/09-21:16:08.999 33c8 Reusing MANIFEST C:\Users\a4ale\AppData\Local\Temp\flutter_tools.a68cbc1\flutter_tools_chrome_device.29df9604\Default\Session Storage/MANIFEST-000001
-2024/12/09-21:16:09.001 33c8 Recovering log #3
-2024/12/09-21:16:09.011 33c8 Reusing old log C:\Users\a4ale\AppData\Local\Temp\flutter_tools.a68cbc1\flutter_tools_chrome_device.29df9604\Default\Session Storage/000003.log 
->>>>>>> 45b30329b94a2a08ab049f806fd8bac6d350e372
+2024/12/10-21:34:31.668 32d8 Recovering log #25
+2024/12/10-21:34:31.685 32d8 Level-0 table #27: started
+2024/12/10-21:34:31.717 32d8 Level-0 table #27: 0 bytes OK
+2024/12/10-21:34:31.850 32d8 Delete type=0 #25
+2024/12/10-21:34:31.851 32d8 Delete type=3 #23

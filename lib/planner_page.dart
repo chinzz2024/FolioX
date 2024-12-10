@@ -15,12 +15,11 @@ class _PlannerPageState extends State<PlannerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Planner Page',
-          style: TextStyle(color: Colors.white),
-        ),
-        backgroundColor: Colors.black,
-      ),
+          title: const Text(
+            'Planner Page',
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: const Color.fromARGB(255, 12, 6, 37)),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Container(
