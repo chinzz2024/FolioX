@@ -1,10 +1,52 @@
-
 import 'package:flutter/material.dart';
-import 'signup_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'home_page.dart';
+import 'signup_page.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  // For handling error messages
+  String? _errorMessage;
+
+  // For handling password visibility
+  bool _isPasswordVisible = false;
+
+  // Function to handle login
+  Future<void> _signIn() async {
+    setState(() {
+      _errorMessage =
+          null; // Clear error message when starting the sign-in attempt
+    });
+
+    try {
+      // Attempt to sign in with email and password
+      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
+
+      // If sign-in is successful, navigate to HomePage
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    } on FirebaseAuthException catch (e) {
+      // If an error occurs, display the error message
+      setState(() {
+        _errorMessage = e.message;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,35 +74,52 @@ class LoginPage extends StatelessWidget {
             const Text("Log in with your credentials."),
             const SizedBox(height: 16),
             const SizedBox(height: 32),
-            const TextField(
+
+            // Email TextField
+            TextField(
+              controller: _emailController,
               decoration: InputDecoration(
                 labelText: "Email",
                 border: OutlineInputBorder(),
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                errorText: _errorMessage != null
+                    ? _errorMessage
+                    : null, // Show error message if any
               ),
             ),
             const SizedBox(height: 20),
-            const TextField(
-              obscureText: true,
+
+            // Password TextField with visibility toggle
+            TextField(
+              controller: _passwordController,
+              obscureText: !_isPasswordVisible, // Toggling password visibility
               decoration: InputDecoration(
                 labelText: "Password",
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-                suffixIcon: Icon(Icons.visibility),
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    _isPasswordVisible
+                        ? Icons.visibility_off
+                        : Icons.visibility,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _isPasswordVisible = !_isPasswordVisible;
+                    });
+                  },
+                ),
               ),
             ),
             const SizedBox(height: 32),
+
+            // Sign-in Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
-                  );
-                },
+                onPressed: _signIn, // Call the sign-in function
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
                   padding: const EdgeInsets.symmetric(vertical: 16),
@@ -69,6 +128,8 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
+
+            // Navigate to SignUp Page
             Center(
               child: Row(
                 mainAxisSize: MainAxisSize.min,

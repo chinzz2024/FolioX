@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'planner_page.dart';
+=======
+>>>>>>> 45b30329b94a2a08ab049f806fd8bac6d350e372
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,6 +22,7 @@ class _HomePageState extends State<HomePage> {
     ProfilePage(),
   ];
 
+<<<<<<< HEAD
   // Function to handle bottom navigation
   void _onItemTapped(int index) {
     if (index == 1) {
@@ -32,6 +36,13 @@ class _HomePageState extends State<HomePage> {
         _selectedIndex = index;
       });
     }
+=======
+  // Method to handle index changes
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+>>>>>>> 45b30329b94a2a08ab049f806fd8bac6d350e372
   }
 
   @override
@@ -48,8 +59,11 @@ class _HomePageState extends State<HomePage> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+<<<<<<< HEAD
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
+=======
+>>>>>>> 45b30329b94a2a08ab049f806fd8bac6d350e372
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.trending_up),
@@ -64,8 +78,10 @@ class _HomePageState extends State<HomePage> {
             label: 'Profile',
           ),
         ],
+        currentIndex: _selectedIndex, // Set the current selected index
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
+        onTap: _onItemTapped, // Update index on tap
       ),
     );
   }

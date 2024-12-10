@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2024/12/09-22:02:14.800 308 Recovering log #19
 2024/12/09-22:02:15.151 308 Level-0 table #21: started
 2024/12/09-22:02:15.352 308 Level-0 table #21: 559 bytes OK
@@ -17,3 +18,8 @@
 2024/12/09-22:02:15.601 308 Delete type=3 #10
 2024/12/09-22:02:15.601 308 Delete type=3 #13
 2024/12/09-22:02:15.601 308 Delete type=3 #17
+=======
+2024/12/09-21:16:08.175 3020 Reusing MANIFEST C:\Users\a4ale\AppData\Local\Temp\flutter_tools.a68cbc1\flutter_tools_chrome_device.29df9604\Default\Service Worker\Database/MANIFEST-000001
+2024/12/09-21:16:08.177 3020 Recovering log #3
+2024/12/09-21:16:08.179 3020 Reusing old log C:\Users\a4ale\AppData\Local\Temp\flutter_tools.a68cbc1\flutter_tools_chrome_device.29df9604\Default\Service Worker\Database/000003.log 
+>>>>>>> 45b30329b94a2a08ab049f806fd8bac6d350e372
