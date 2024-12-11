@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'planner_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   // Function to handle bottom navigation
   void _onItemTapped(int index) {
     if (index == 1) {
-      // Navigate to PlannerPage
+      // Navigate to PlannerPage when Planner is selected
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const PlannerPage()),
@@ -32,11 +32,6 @@ class _HomePageState extends State<HomePage> {
         _selectedIndex = index;
       });
     }
-  // Method to handle index changes
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
   }
 
   @override
@@ -54,7 +49,6 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.trending_up),
@@ -69,7 +63,6 @@ class _HomePageState extends State<HomePage> {
             label: 'Profile',
           ),
         ],
-        currentIndex: _selectedIndex, // Set the current selected index
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped, // Update index on tap
@@ -79,7 +72,7 @@ class _HomePageState extends State<HomePage> {
 }
 
 class StockPage extends StatelessWidget {
-  const StockPage({Key? key}) : super(key: key);
+  const StockPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +83,7 @@ class StockPage extends StatelessWidget {
 }
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {

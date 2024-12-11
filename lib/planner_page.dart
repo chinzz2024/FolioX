@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'option.dart';
 
 class PlannerPage extends StatefulWidget {
-  const PlannerPage({Key? key}) : super(key: key);
+  const PlannerPage({super.key});
 
   @override
   _PlannerPageState createState() => _PlannerPageState();
@@ -56,7 +56,7 @@ class _PlannerPageState extends State<PlannerPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => EmploymentOptionPage(),
+                        builder: (context) => const EmploymentOptionPage(),
                       ),
                     );
                   },
