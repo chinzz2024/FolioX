@@ -1,1 +1,67 @@
+<<<<<<< HEAD
 2024/12/11-13:14:46.909 208c Reusing MANIFEST C:\Users\a4ale\AppData\Local\Temp\flutter_tools.29804f2\flutter_tools_chrome_device.64996fce\Default\Site Characteristics Database/MANIFEST-000001
+=======
+<<<<<<< HEAD
+2024/12/10-22:05:30.338 1ce8 Recovering log #28
+2024/12/10-22:05:30.403 1ce8 Level-0 table #31: started
+2024/12/10-22:05:30.487 1ce8 Level-0 table #31: 165 bytes OK
+2024/12/10-22:05:30.505 1ce8 Delete type=0 #3
+2024/12/10-22:05:30.505 1ce8 Delete type=2 #4
+2024/12/10-22:05:30.506 1ce8 Delete type=0 #6
+2024/12/10-22:05:30.506 1ce8 Delete type=2 #8
+2024/12/10-22:05:30.506 1ce8 Delete type=0 #9
+2024/12/10-22:05:30.506 1ce8 Delete type=2 #11
+2024/12/10-22:05:30.506 1ce8 Delete type=0 #12
+2024/12/10-22:05:30.506 1ce8 Delete type=0 #15
+2024/12/10-22:05:30.506 1ce8 Delete type=2 #16
+2024/12/10-22:05:30.507 1ce8 Delete type=2 #18
+2024/12/10-22:05:30.507 1ce8 Delete type=0 #19
+2024/12/10-22:05:30.507 1ce8 Delete type=2 #21
+2024/12/10-22:05:30.507 1ce8 Delete type=0 #22
+2024/12/10-22:05:30.510 1ce8 Delete type=2 #24
+2024/12/10-22:05:30.510 1ce8 Delete type=0 #25
+2024/12/10-22:05:30.510 1ce8 Delete type=0 #28
+2024/12/10-22:05:30.510 1ce8 Delete type=3 #1
+2024/12/10-22:05:30.510 1ce8 Delete type=3 #5
+2024/12/10-22:05:30.511 1ce8 Delete type=3 #7
+2024/12/10-22:05:30.511 1ce8 Delete type=3 #10
+2024/12/10-22:05:30.511 1ce8 Delete type=3 #13
+2024/12/10-22:05:30.511 1ce8 Delete type=3 #17
+2024/12/10-22:05:30.511 1ce8 Delete type=3 #20
+2024/12/10-22:05:30.511 1ce8 Delete type=3 #23
+2024/12/10-22:05:30.511 1ce8 Delete type=3 #26
+=======
+<<<<<<< HEAD
+2024/12/09-23:32:57.509 357c Reusing MANIFEST C:\Users\a4ale\AppData\Local\Temp\flutter_tools.2449316\flutter_tools_chrome_device.8fce0d2f\Default\Site Characteristics Database/MANIFEST-000001
+2024/12/09-23:32:57.510 357c Recovering log #3
+2024/12/09-23:32:57.511 357c Reusing old log C:\Users\a4ale\AppData\Local\Temp\flutter_tools.2449316\flutter_tools_chrome_device.8fce0d2f\Default\Site Characteristics Database/000003.log 
+=======
+<<<<<<< HEAD
+2024/12/09-22:02:14.804 13bc Recovering log #22
+2024/12/09-22:02:15.134 13bc Level-0 table #24: started
+2024/12/09-22:02:15.145 13bc Level-0 table #24: 165 bytes OK
+2024/12/09-22:02:15.611 13bc Delete type=0 #3
+2024/12/09-22:02:15.611 13bc Delete type=2 #4
+2024/12/09-22:02:15.612 13bc Delete type=0 #6
+2024/12/09-22:02:15.612 13bc Delete type=2 #8
+2024/12/09-22:02:15.613 13bc Delete type=0 #9
+2024/12/09-22:02:15.613 13bc Delete type=2 #11
+2024/12/09-22:02:15.614 13bc Delete type=0 #12
+2024/12/09-22:02:15.614 13bc Delete type=0 #15
+2024/12/09-22:02:15.614 13bc Delete type=0 #19
+2024/12/09-22:02:15.614 13bc Delete type=0 #22
+2024/12/09-22:02:15.615 13bc Delete type=3 #1
+2024/12/09-22:02:15.615 13bc Delete type=3 #5
+2024/12/09-22:02:15.615 13bc Delete type=3 #7
+2024/12/09-22:02:15.616 13bc Delete type=3 #10
+2024/12/09-22:02:15.616 13bc Delete type=3 #13
+2024/12/09-22:02:15.617 13bc Delete type=3 #17
+2024/12/09-22:02:15.617 13bc Delete type=3 #20
+=======
+2024/12/09-21:16:08.168 3010 Reusing MANIFEST C:\Users\a4ale\AppData\Local\Temp\flutter_tools.a68cbc1\flutter_tools_chrome_device.29df9604\Default\Site Characteristics Database/MANIFEST-000001
+2024/12/09-21:16:08.169 3010 Recovering log #3
+2024/12/09-21:16:08.170 3010 Reusing old log C:\Users\a4ale\AppData\Local\Temp\flutter_tools.a68cbc1\flutter_tools_chrome_device.29df9604\Default\Site Characteristics Database/000003.log 
+>>>>>>> 45b30329b94a2a08ab049f806fd8bac6d350e372
+>>>>>>> d16b732f913c3b346ebdf5d34de4e3c22f6095e8
+>>>>>>> 81ce94dcadbd054e80f06615b3155208d2a86472
+>>>>>>> 9d805c2683a9cf34ece6912d1caf1886c3dc1431

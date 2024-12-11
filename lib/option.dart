@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class EmploymentOptionPage extends StatelessWidget {
-  const EmploymentOptionPage({Key? key}) : super(key: key);
+  const EmploymentOptionPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,7 @@ class EmploymentOptionPage extends StatelessWidget {
 
 class PlaceholderPage extends StatelessWidget {
   final String title;
-  const PlaceholderPage({Key? key, required this.title}) : super(key: key);
+  const PlaceholderPage({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
