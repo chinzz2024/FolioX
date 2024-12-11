@@ -87,12 +87,17 @@ class _HomePageState extends State<HomePage> {
           ? const Center(child: CircularProgressIndicator())
           : newsArticles.isEmpty
               ? const Center(child: Text('No news available.'))
-              : ListView.builder(
+              : GridView.builder(
+                  padding: const EdgeInsets.all(10.0),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2, // Two columns
+                    crossAxisSpacing: 10.0, // Horizontal spacing between items
+                    mainAxisSpacing: 10.0, // Vertical spacing between items
+                  ),
                   itemCount: newsArticles.length,
                   itemBuilder: (context, index) {
                     final article = newsArticles[index];
-                    return ListTile(
-                      title: Text(article['title']!),
+                    return GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
@@ -102,6 +107,29 @@ class _HomePageState extends State<HomePage> {
                           ),
                         );
                       },
+                      child: Card(
+                        elevation: 4,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                article['title']!,
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     );
                   },
                 ),
