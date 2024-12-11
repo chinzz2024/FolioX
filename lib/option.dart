@@ -12,7 +12,7 @@ class EmploymentOptionPage extends StatelessWidget {
           'Select Employment Type',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: const Color.fromARGB(255, 12, 6, 37),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -29,7 +29,7 @@ class EmploymentOptionPage extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: const Color.fromARGB(255, 18, 48, 73),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
               ),
@@ -48,7 +48,7 @@ class EmploymentOptionPage extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
+                backgroundColor: const Color.fromARGB(255, 30, 75, 93),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
               ),
@@ -67,7 +67,7 @@ class EmploymentOptionPage extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange,
+                backgroundColor: const Color.fromARGB(255, 60, 121, 168),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
               ),

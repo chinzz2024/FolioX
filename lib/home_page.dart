@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/parser.dart';
+import 'planner_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,7 +24,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> scrapeStockNews() async {
     final url =
-        'https://www.finance.yahoo.com/rss/'; // Public RSS feed for stock news
+        'https://www.moneycontrol.com/rss/MCtopnews.xml'; // Public RSS feed for stock news
 
     try {
       final response = await http.get(Uri.parse(url));
@@ -61,14 +62,26 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       _selectedIndex = index;
     });
+
+    if (index == 1) {
+      // Navigate to Planner page when Planner tab is tapped
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => PlannerPage()), // Navigates to PlannerPage
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Stock News'),
-        backgroundColor: Colors.black,
+        title: const Text(
+          'Stock News Page',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: const Color.fromARGB(255, 12, 6, 37),
       ),
       body: isLoading
           ? const Center(child: CircularProgressIndicator())
@@ -94,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                 ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
+        onTap: _onItemTapped, // Calls the onItemTapped function on tap
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.trending_up),
