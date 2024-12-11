@@ -21,22 +21,16 @@ class _HomePageState extends State<HomePage> {
 
   // Function to handle bottom navigation
   void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
     if (index == 1) {
       // Navigate to PlannerPage
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const PlannerPage()),
       );
-    } else {
-      setState(() {
-        _selectedIndex = index;
-      });
     }
-  // Method to handle index changes
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
   }
 
   @override
@@ -69,10 +63,8 @@ class _HomePageState extends State<HomePage> {
             label: 'Profile',
           ),
         ],
-        currentIndex: _selectedIndex, // Set the current selected index
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
-        onTap: _onItemTapped, // Update index on tap
       ),
     );
   }
