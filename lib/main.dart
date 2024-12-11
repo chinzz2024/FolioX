@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple, // Sets the primary theme color.
       ),
+
       home: const LoginPage(), // Ensure LoginPage is implemented correctly.
       debugShowCheckedModeBanner: false, // Hides the debug banner.
     );
