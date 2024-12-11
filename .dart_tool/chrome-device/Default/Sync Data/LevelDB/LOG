@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-2024/12/11-22:16:39.988 30c8 Reusing MANIFEST C:\Users\a4ale\AppData\Local\Temp\flutter_tools.67e3e27c\flutter_tools_chrome_device.789fb9e7\Default\Sync Data\LevelDB/MANIFEST-000001
-2024/12/11-22:16:39.999 30c8 Recovering log #3
-2024/12/11-22:16:40.001 30c8 Reusing old log C:\Users\a4ale\AppData\Local\Temp\flutter_tools.67e3e27c\flutter_tools_chrome_device.789fb9e7\Default\Sync Data\LevelDB/000003.log 
-=======
-<<<<<<< HEAD
-2024/12/11-21:49:02.482 5cac Reusing MANIFEST /tmp/flutter_tools.RNEKNX/flutter_tools_chrome_device.JBLKDI/Default/Sync Data/LevelDB/MANIFEST-000001
-2024/12/11-21:49:02.491 5cac Recovering log #3
-2024/12/11-21:49:02.491 5cac Reusing old log /tmp/flutter_tools.RNEKNX/flutter_tools_chrome_device.JBLKDI/Default/Sync Data/LevelDB/000003.log 
-=======
->>>>>>> f3c77d8bdcbd8c8271adf036a95eef14bf19734f
->>>>>>> 977a75b7bf6a68bea582b75e3e8b79a21f28d3bc
+2024/12/12-00:21:53.046 a8c9 Reusing MANIFEST /tmp/flutter_tools.GZPIXO/flutter_tools_chrome_device.SNPRMD/Default/Sync Data/LevelDB/MANIFEST-000001
+2024/12/12-00:21:53.058 a8c9 Recovering log #3
+2024/12/12-00:21:53.059 a8c9 Reusing old log /tmp/flutter_tools.GZPIXO/flutter_tools_chrome_device.SNPRMD/Default/Sync Data/LevelDB/000003.log 
