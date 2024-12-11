@@ -11,6 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
   List<Map<String, String>> newsArticles = [];
   bool isLoading = true;
 
@@ -22,20 +23,20 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> scrapeStockNews() async {
     final url =
-        'https://example.com/stock-news'; // Replace with a valid stock news URL
+        'https://www.finance.yahoo.com/rss/'; // Public RSS feed for stock news
 
     try {
       final response = await http.get(Uri.parse(url));
 
       if (response.statusCode == 200) {
+        // Parse the XML response
         final document = parse(response.body);
+        final items = document.getElementsByTagName('item');
 
-        // Extract news data (update selectors based on actual webpage structure)
-        final newsElements = document.querySelectorAll('.news-item-class');
-        final fetchedNews = newsElements.map((element) {
-          final title = element.querySelector('.news-title-class')?.text.trim();
-          final link = element.querySelector('a')?.attributes['href'];
-          return {'title': title ?? 'No Title', 'link': link ?? '#'};
+        final fetchedNews = items.map((item) {
+          final title = item.getElementsByTagName('title').first.text;
+          final link = item.getElementsByTagName('link').first.text;
+          return {'title': title, 'link': link};
         }).toList();
 
         setState(() {
@@ -46,7 +47,7 @@ class _HomePageState extends State<HomePage> {
         setState(() {
           isLoading = false;
         });
-        print('Failed to load the webpage: ${response.statusCode}');
+        print('Failed to load the news: ${response.statusCode}');
       }
     } catch (e) {
       setState(() {
@@ -54,6 +55,12 @@ class _HomePageState extends State<HomePage> {
       });
       print('Error: $e');
     }
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   @override
@@ -74,16 +81,13 @@ class _HomePageState extends State<HomePage> {
                     return ListTile(
                       title: Text(article['title']!),
                       onTap: () {
-                        // Open news link
-                        if (article['link'] != null && article['link'] != '#') {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  NewsDetailPage(link: article['link']!),
-                            ),
-                          );
-                        }
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                NewsDetailPage(link: article['link']!),
+                          ),
+                        );
                       },
                     );
                   },
@@ -125,7 +129,7 @@ class NewsDetailPage extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       body: Center(
-        child: Text('Display full article from: $link'),
+        child: Text('Visit the full article: $link'),
       ),
     );
   }

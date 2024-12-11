@@ -1,20 +1,8 @@
-2024/12/11-18:10:50.792 3cb8 Reusing MANIFEST C:\Users\a4ale\AppData\Local\Temp\flutter_tools.9b8d3317\flutter_tools_chrome_device.4fbd5343\Default\Site Characteristics Database/MANIFEST-000001
-2024/12/11-18:10:50.793 3cb8 Recovering log #3
-2024/12/11-18:10:50.793 3cb8 Level-0 table #10: started
-2024/12/11-18:10:51.128 3cb8 Level-0 table #10: 325 bytes OK
-2024/12/11-18:10:51.128 3cb8 Recovering log #6
-2024/12/11-18:10:51.128 3cb8 Level-0 table #11: started
-2024/12/11-18:10:51.486 3cb8 Level-0 table #11: 168 bytes OK
-2024/12/11-18:10:51.486 3cb8 Recovering log #10
-2024/12/11-18:10:51.487 3cb8 Reusing old log C:\Users\a4ale\AppData\Local\Temp\flutter_tools.9b8d3317\flutter_tools_chrome_device.4fbd5343\Default\Site Characteristics Database/000010.log 
-2024/12/11-18:10:51.762 3cb8 Delete type=0 #3
-2024/12/11-18:10:51.762 3cb8 Delete type=0 #6
-2024/12/11-18:10:51.764 3cac Compacting 5@0 + 0@1 files
-2024/12/11-18:10:51.971 3cac Generated table #12@0: 2 keys, 197 bytes
-2024/12/11-18:10:51.972 3cac Compacted 5@0 + 0@1 files => 197 bytes
-2024/12/11-18:10:52.285 3cac compacted to: files[ 0 1 0 0 0 0 0 ]
-2024/12/11-18:10:52.286 3cac Delete type=2 #4
-2024/12/11-18:10:52.287 3cac Delete type=2 #7
-2024/12/11-18:10:52.287 3cac Delete type=2 #8
-2024/12/11-18:10:52.287 3cac Delete type=2 #10
-2024/12/11-18:10:52.287 3cac Delete type=2 #11
+2024/12/11-18:54:36.115 245c Reusing MANIFEST C:\Users\a4ale\AppData\Local\Temp\flutter_tools.46e6553f\flutter_tools_chrome_device.abbb2ec6\Default\Site Characteristics Database/MANIFEST-000001
+2024/12/11-18:54:36.116 245c Recovering log #10
+2024/12/11-18:54:36.116 245c Reusing old log C:\Users\a4ale\AppData\Local\Temp\flutter_tools.46e6553f\flutter_tools_chrome_device.abbb2ec6\Default\Site Characteristics Database/000010.log 
+2024/12/11-18:54:36.117 245c Delete type=0 #3
+2024/12/11-18:54:36.117 245c Delete type=2 #4
+2024/12/11-18:54:36.117 245c Delete type=0 #6
+2024/12/11-18:54:36.117 245c Delete type=2 #7
+2024/12/11-18:54:36.117 245c Delete type=2 #8
