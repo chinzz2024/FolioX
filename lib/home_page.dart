@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/parser.dart';
@@ -22,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> scrapeStockNews() async {
-    final url =
+    const url =
         'https://www.finance.yahoo.com/rss/'; // Public RSS feed for stock news
 
     try {
