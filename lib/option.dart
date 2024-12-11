@@ -25,7 +25,7 @@ class EmploymentOptionPage extends StatelessWidget {
                 // Logic for Government Employee selection
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => IncomePage()),
+                  MaterialPageRoute(builder: (context) => const IncomePage()),
                 );
               },
               style: ElevatedButton.styleFrom(
