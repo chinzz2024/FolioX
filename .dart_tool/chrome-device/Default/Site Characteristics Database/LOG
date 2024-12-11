@@ -1,25 +1,4 @@
-<<<<<<< HEAD
-2024/12/11-22:02:32.647 3038 Reusing MANIFEST C:\Users\hp\AppData\Local\Temp\flutter_tools.f3a5eb4b\flutter_tools_chrome_device.bb01511a\Default\Site Characteristics Database/MANIFEST-000001
-2024/12/11-22:02:32.648 3038 Recovering log #6
-2024/12/11-22:02:32.649 3038 Reusing old log C:\Users\hp\AppData\Local\Temp\flutter_tools.f3a5eb4b\flutter_tools_chrome_device.bb01511a\Default\Site Characteristics Database/000006.log 
-2024/12/11-22:02:32.653 3038 Delete type=0 #3
-=======
-<<<<<<< HEAD
-2024/12/11-22:16:40.087 1fdc Reusing MANIFEST C:\Users\a4ale\AppData\Local\Temp\flutter_tools.67e3e27c\flutter_tools_chrome_device.789fb9e7\Default\Site Characteristics Database/MANIFEST-000001
-2024/12/11-22:16:40.087 1fdc Recovering log #10
-2024/12/11-22:16:40.088 1fdc Reusing old log C:\Users\a4ale\AppData\Local\Temp\flutter_tools.67e3e27c\flutter_tools_chrome_device.789fb9e7\Default\Site Characteristics Database/000010.log 
-2024/12/11-22:16:40.088 1fdc Delete type=0 #3
-2024/12/11-22:16:40.088 1fdc Delete type=2 #4
-2024/12/11-22:16:40.088 1fdc Delete type=0 #6
-2024/12/11-22:16:40.089 1fdc Delete type=2 #7
-2024/12/11-22:16:40.089 1fdc Delete type=2 #8
-=======
-2024/12/11-21:58:16.451 1250 Reusing MANIFEST C:\Users\hp\AppData\Local\Temp\flutter_tools.311a0f1\flutter_tools_chrome_device.2b318c16\Default\Site Characteristics Database/MANIFEST-000001
-2024/12/11-21:58:16.461 1250 Recovering log #3
-2024/12/11-21:58:16.462 1250 Level-0 table #6: started
-2024/12/11-21:58:16.498 1250 Level-0 table #6: 325 bytes OK
-2024/12/11-21:58:16.498 1250 Recovering log #6
-2024/12/11-21:58:16.499 1250 Reusing old log C:\Users\hp\AppData\Local\Temp\flutter_tools.311a0f1\flutter_tools_chrome_device.2b318c16\Default\Site Characteristics Database/000006.log 
-2024/12/11-21:58:16.530 1250 Delete type=0 #3
->>>>>>> 977a75b7bf6a68bea582b75e3e8b79a21f28d3bc
->>>>>>> d687944b9d7233106c7103df00faa42daa4add31
+2024/12/12-00:35:59.307 1f94 Reusing MANIFEST C:\Users\hp\AppData\Local\Temp\flutter_tools.84babff5\flutter_tools_chrome_device.eb54de91\Default\Site Characteristics Database/MANIFEST-000001
+2024/12/12-00:35:59.307 1f94 Recovering log #6
+2024/12/12-00:35:59.308 1f94 Reusing old log C:\Users\hp\AppData\Local\Temp\flutter_tools.84babff5\flutter_tools_chrome_device.eb54de91\Default\Site Characteristics Database/000006.log 
+2024/12/12-00:35:59.308 1f94 Delete type=0 #3

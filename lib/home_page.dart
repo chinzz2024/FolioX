@@ -22,13 +22,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> scrapeStockNews() async {
-<<<<<<< HEAD
     final url =
         'https://www.moneycontrol.com/rss/MCtopnews.xml'; // Public RSS feed for stock news
-=======
-    const url =
-        'https://www.finance.yahoo.com/rss/'; // Public RSS feed for stock news
->>>>>>> 977a75b7bf6a68bea582b75e3e8b79a21f28d3bc
+     // Public RSS feed for stock news
+
 
     try {
       final response = await http.get(Uri.parse(url));
