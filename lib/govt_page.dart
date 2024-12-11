@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class IncomePage extends StatefulWidget {
   const IncomePage({super.key});
@@ -19,6 +21,45 @@ class _IncomePageState extends State<IncomePage> {
     customGoalController.dispose();
     targetYearController.dispose();
     super.dispose();
+  }
+
+  Future<void> saveGoalAndYear() async {
+    try {
+      final user = FirebaseAuth.instance.currentUser;
+      if (user == null) {
+        throw 'User not authenticated!';
+      }
+
+      final String userId = user.uid;
+
+      // Check if the user already has a document
+      DocumentSnapshot docSnapshot =
+          await FirebaseFirestore.instance.collection('userGoals').doc(userId).get();
+
+      if (!docSnapshot.exists) {
+        // Create a new document with the user's UID
+        await FirebaseFirestore.instance.collection('userGoals').doc(userId).set({
+          'goal': selectedGoal == 'Others' ? customGoalController.text : selectedGoal,
+          'targetYear': targetYearController.text,
+          'timestamp': FieldValue.serverTimestamp(),
+        });
+      } else {
+        // Update the existing document with new data
+        await FirebaseFirestore.instance.collection('userGoals').doc(userId).update({
+          'goal': selectedGoal == 'Others' ? customGoalController.text : selectedGoal,
+          'targetYear': targetYearController.text,
+          'timestamp': FieldValue.serverTimestamp(),
+        });
+      }
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Data saved successfully!')),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to save data: $e')),
+      );
+    }
   }
 
   @override
@@ -76,33 +117,25 @@ class _IncomePageState extends State<IncomePage> {
                 ),
               ),
               const SizedBox(height: 16.0),
-              // Grid layout for input boxes (Income)
-              GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 50.0,
-                  mainAxisSpacing: 10.0,
-                  childAspectRatio: 5.0,
-                ),
-                itemCount: incomeFields.length,
-                itemBuilder: (context, index) {
-                  return TextField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      labelText: incomeFields[index],
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0),
+              // Single column for income fields
+              ...incomeFields.map((income) => Column(
+                    children: [
+                      TextField(
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          labelText: income,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 16.0,
+                            vertical: 8.0,
+                          ),
+                        ),
                       ),
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 16.0,
-                        vertical: 8.0,
-                      ),
-                    ),
-                  );
-                },
-              ),
+                      const SizedBox(height: 8.0), // Spacer between fields
+                    ],
+                  )),
               const SizedBox(height: 16.0),
               const Text(
                 'Deduction',
@@ -112,33 +145,25 @@ class _IncomePageState extends State<IncomePage> {
                 ),
               ),
               const SizedBox(height: 16.0),
-              // Grid layout for input boxes (Deduction)
-              GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 50.0,
-                  mainAxisSpacing: 10.0,
-                  childAspectRatio: 5.0,
-                ),
-                itemCount: deductionFields.length,
-                itemBuilder: (context, index) {
-                  return TextField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      labelText: deductionFields[index],
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0),
+              // Single column for deduction fields
+              ...deductionFields.map((deduction) => Column(
+                    children: [
+                      TextField(
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          labelText: deduction,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 16.0,
+                            vertical: 8.0,
+                          ),
+                        ),
                       ),
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 16.0,
-                        vertical: 8.0,
-                      ),
-                    ),
-                  );
-                },
-              ),
+                      const SizedBox(height: 8.0), // Spacer between fields
+                    ],
+                  )),
               const SizedBox(height: 16.0),
               const Text(
                 'Expenditure',
@@ -148,33 +173,25 @@ class _IncomePageState extends State<IncomePage> {
                 ),
               ),
               const SizedBox(height: 16.0),
-              // Grid layout for input boxes (Expenditure)
-              GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 50.0,
-                  mainAxisSpacing: 10.0,
-                  childAspectRatio: 5.0,
-                ),
-                itemCount: expenditureFields.length,
-                itemBuilder: (context, index) {
-                  return TextField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      labelText: expenditureFields[index],
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0),
+              // Single column for expenditure fields
+              ...expenditureFields.map((expenditure) => Column(
+                    children: [
+                      TextField(
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          labelText: expenditure,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 16.0,
+                            vertical: 8.0,
+                          ),
+                        ),
                       ),
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 16.0,
-                        vertical: 8.0,
-                      ),
-                    ),
-                  );
-                },
-              ),
+                      const SizedBox(height: 8.0), // Spacer between fields
+                    ],
+                  )),
               const SizedBox(height: 16.0),
               const Text(
                 'Select Goal',
@@ -252,12 +269,7 @@ class _IncomePageState extends State<IncomePage> {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    String goal = selectedGoal == 'Others'
-                        ? customGoalController.text
-                        : selectedGoal ?? '';
-                    String targetYear = targetYearController.text;
-                    print('Selected Goal: $goal');
-                    print('Target Year: $targetYear');
+                    saveGoalAndYear();
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 12, 6, 37),
