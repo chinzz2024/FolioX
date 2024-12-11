@@ -13,7 +13,7 @@ void main() async {
   );
 
   // Start the app.
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
