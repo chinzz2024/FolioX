@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'govt_page.dart';
 
 class EmploymentOptionPage extends StatelessWidget {
   const EmploymentOptionPage({super.key});
@@ -24,10 +25,7 @@ class EmploymentOptionPage extends StatelessWidget {
                 // Logic for Government Employee selection
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        const PlaceholderPage(title: 'Government Employee'),
-                  ),
+                  MaterialPageRoute(builder: (context) => IncomePage()),
                 );
               },
               style: ElevatedButton.styleFrom(

@@ -1,108 +1,112 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-
-=======
->>>>>>> 81ce94dcadbd054e80f06615b3155208d2a86472
-import 'planner_page.dart';
+import 'package:http/http.dart' as http;
+import 'package:html/parser.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  // The selected index to change the view
-  int _selectedIndex = 0;
+  List<Map<String, String>> newsArticles = [];
+  bool isLoading = true;
 
-  // List of pages corresponding to each option
-  static const List<Widget> _widgetOptions = <Widget>[
-    StockPage(),
-    Placeholder(), // Placeholder for Planner navigation
-    ProfilePage(),
-  ];
+  @override
+  void initState() {
+    super.initState();
+    scrapeStockNews();
+  }
 
-  // Function to handle bottom navigation
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-    if (index == 1) {
-      // Navigate to PlannerPage
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const PlannerPage()),
-      );
+  Future<void> scrapeStockNews() async {
+    final url =
+        'https://example.com/stock-news'; // Replace with a valid stock news URL
+
+    try {
+      final response = await http.get(Uri.parse(url));
+
+      if (response.statusCode == 200) {
+        final document = parse(response.body);
+
+        // Extract news data (update selectors based on actual webpage structure)
+        final newsElements = document.querySelectorAll('.news-item-class');
+        final fetchedNews = newsElements.map((element) {
+          final title = element.querySelector('.news-title-class')?.text.trim();
+          final link = element.querySelector('a')?.attributes['href'];
+          return {'title': title ?? 'No Title', 'link': link ?? '#'};
+        }).toList();
+
+        setState(() {
+          newsArticles = fetchedNews;
+          isLoading = false;
+        });
+      } else {
+        setState(() {
+          isLoading = false;
+        });
+        print('Failed to load the webpage: ${response.statusCode}');
+      }
+    } catch (e) {
+      setState(() {
+        isLoading = false;
+      });
+      print('Error: $e');
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-  // Method to handle index changes
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
->>>>>>> 81ce94dcadbd054e80f06615b3155208d2a86472
->>>>>>> 9d805c2683a9cf34ece6912d1caf1886c3dc1431
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Home Page',
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const Text('Stock News'),
+        backgroundColor: Colors.black,
+      ),
+      body: isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : newsArticles.isEmpty
+              ? const Center(child: Text('No news available.'))
+              : ListView.builder(
+                  itemCount: newsArticles.length,
+                  itemBuilder: (context, index) {
+                    final article = newsArticles[index];
+                    return ListTile(
+                      title: Text(article['title']!),
+                      onTap: () {
+                        // Open news link
+                        if (article['link'] != null && article['link'] != '#') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  NewsDetailPage(link: article['link']!),
+                            ),
+                          );
+                        }
+                      },
+                    );
+                  },
+                ),
+    );
+  }
+}
+
+class NewsDetailPage extends StatelessWidget {
+  final String link;
+
+  const NewsDetailPage({required this.link, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('News Detail'),
         backgroundColor: Colors.black,
       ),
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: Text('Display full article from: $link'),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.trending_up),
-            label: 'Stock',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.savings),
-            label: 'Planner',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.grey,
-      ),
-    );
-  }
-}
-
-class StockPage extends StatelessWidget {
-  const StockPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Stock Page', style: TextStyle(fontSize: 24)),
-    );
-  }
-}
-
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Profile Page', style: TextStyle(fontSize: 24)),
     );
   }
 }

@@ -4,7 +4,7 @@ import 'home_page.dart';
 import 'signup_page.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
       // If sign-in is successful, navigate to HomePage
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => const HomePage()),
       );
     } on FirebaseAuthException catch (e) {
       // If an error occurs, display the error message
@@ -80,12 +80,10 @@ class _LoginPageState extends State<LoginPage> {
               controller: _emailController,
               decoration: InputDecoration(
                 labelText: "Email",
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 contentPadding:
                     const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-                errorText: _errorMessage != null
-                    ? _errorMessage
-                    : null, // Show error message if any
+                errorText: _errorMessage, // Show error message if any
               ),
             ),
             const SizedBox(height: 20),
@@ -140,7 +138,8 @@ class _LoginPageState extends State<LoginPage> {
                       // Navigate to Sign Up page
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SignUpPage()),
+                        MaterialPageRoute(
+                            builder: (context) => const SignUpPage()),
                       );
                     },
                     child: const Text("Sign Up"),
