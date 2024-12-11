@@ -16,6 +16,8 @@ class MyApp extends StatelessWidget {
 }
 
 class CounterScreen extends StatefulWidget {
+  const CounterScreen({super.key});
+
   @override
   _CounterScreenState createState() => _CounterScreenState();
 }
@@ -36,7 +38,7 @@ class _CounterScreenState extends State<CounterScreen> {
         title: const Text('Counter Test'),
       ),
       body: Center(
-        child: Text('$_counter', style: Theme.of(context).textTheme.headline4),
+        child: Text('$_counter', style: Theme.of(context).textTheme.headlineMedium),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
