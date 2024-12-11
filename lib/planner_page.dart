@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'option.dart';
-import 'home_page.dart';
 
 class PlannerPage extends StatefulWidget {
   const PlannerPage({super.key});
@@ -11,21 +10,6 @@ class PlannerPage extends StatefulWidget {
 
 class _PlannerPageState extends State<PlannerPage> {
   final TextEditingController _controller = TextEditingController();
-  int _selectedIndex = 1;
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-
-    if (index == 0) {
-      // Navigate to Planner page when Planner tab is tapped
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => HomePage()), // Navigates to PlannerPage
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
