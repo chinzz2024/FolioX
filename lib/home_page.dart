@@ -88,6 +88,26 @@ class _HomePageState extends State<HomePage> {
                     );
                   },
                 ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.trending_up),
+            label: 'Stock',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.savings),
+            label: 'Planner',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.grey,
+      ),
     );
   }
 }
