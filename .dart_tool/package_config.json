@@ -260,7 +260,11 @@
       "languageVersion": "3.5"
     }
   ],
+<<<<<<< HEAD
   "generated": "2024-12-11T16:26:51.360542Z",
+=======
+  "generated": "2024-12-11T17:24:08.289839Z",
+>>>>>>> d4095e3c5d0c39a5ad7a68c29ef596731e976d56
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///home/pranav/flutter",
