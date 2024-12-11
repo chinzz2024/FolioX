@@ -72,7 +72,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '898393754970',
     projectId: 'foliox-e75a6',
     storageBucket: 'foliox-e75a6.firebasestorage.app',
-    iosBundleId: 'com.example.myrProject',
+    iosBundleId: 'com.example.myProject',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
