@@ -1,6 +1,6 @@
 {
-    "name": "myr_project",
-    "short_name": "myr_project",
+    "name": "my_project",
+    "short_name": "my_project",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

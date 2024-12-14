@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'govt_page.dart';
 
 class EmploymentOptionPage extends StatelessWidget {
-  const EmploymentOptionPage({Key? key}) : super(key: key);
+  const EmploymentOptionPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +25,11 @@ class EmploymentOptionPage extends StatelessWidget {
                 // Logic for Government Employee selection
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => IncomePage()),
+                  MaterialPageRoute(builder: (context) => const IncomePage()),
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 10, 42, 68),
+                backgroundColor: const Color.fromARGB(255, 18, 48, 73),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
               ),
@@ -48,7 +48,7 @@ class EmploymentOptionPage extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 28, 82, 107),
+                backgroundColor: const Color.fromARGB(255, 30, 75, 93),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
               ),
@@ -67,7 +67,7 @@ class EmploymentOptionPage extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 71, 121, 134),
+                backgroundColor: const Color.fromARGB(255, 60, 121, 168),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
               ),
@@ -82,7 +82,7 @@ class EmploymentOptionPage extends StatelessWidget {
 
 class PlaceholderPage extends StatelessWidget {
   final String title;
-  const PlaceholderPage({Key? key, required this.title}) : super(key: key);
+  const PlaceholderPage({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {

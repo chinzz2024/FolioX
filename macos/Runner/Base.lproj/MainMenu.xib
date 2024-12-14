@@ -195,7 +195,7 @@
                                         <menuItem title="Show Substitutions" id="z6F-FW-3nz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="orderFrontSubstitutionsPanel:" target="-1" id="oku-mr-iSq"/>
+                                                <action selector="orderFrontSubstitutionsPanel:" target="-1" id="oku-my-iSq"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="gPx-C9-uUO"/>

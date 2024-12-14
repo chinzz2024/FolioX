@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'option.dart';
 
 class PlannerPage extends StatefulWidget {
-  const PlannerPage({Key? key}) : super(key: key);
+  const PlannerPage({super.key});
 
   @override
   _PlannerPageState createState() => _PlannerPageState();
@@ -15,11 +15,12 @@ class _PlannerPageState extends State<PlannerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text(
-            'Planner Page',
-            style: TextStyle(color: Colors.white),
-          ),
-          backgroundColor: const Color.fromARGB(255, 12, 6, 37)),
+        title: const Text(
+          'Planner Page',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.black,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Container(
@@ -55,7 +56,7 @@ class _PlannerPageState extends State<PlannerPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => EmploymentOptionPage(),
+                        builder: (context) => const EmploymentOptionPage(),
                       ),
                     );
                   },
