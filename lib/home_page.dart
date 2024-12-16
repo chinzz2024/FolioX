@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-<<<<<<< HEAD
 import 'package:html/parser.dart';
-=======
 import 'package:xml/xml.dart';
->>>>>>> 18ce9a1810e39e5231316ca729605a0254b960ef
 import 'planner_page.dart';
 
 class HomePage extends StatefulWidget {

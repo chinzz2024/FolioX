@@ -1,10 +1,16 @@
-<<<<<<< HEAD
-2024/12/16-15:34:18.882 414 Reusing MANIFEST C:\Users\a4ale\AppData\Local\Temp\flutter_tools.1f793cc7\flutter_tools_chrome_device.a107aff4\Default\shared_proto_db/MANIFEST-000001
-2024/12/16-15:34:18.883 414 Recovering log #7
-2024/12/16-15:34:18.885 414 Reusing old log C:\Users\a4ale\AppData\Local\Temp\flutter_tools.1f793cc7\flutter_tools_chrome_device.a107aff4\Default\shared_proto_db/000007.log 
-2024/12/16-15:34:18.885 414 Delete type=0 #3
-2024/12/16-15:34:18.885 414 Delete type=0 #4
-=======
-2024/12/16-20:25:36.155 34a4 Creating DB /tmp/flutter_tools.SHVFNA/flutter_tools_chrome_device.JSFUZR/Default/shared_proto_db since it was missing.
-2024/12/16-20:25:36.164 34a4 Reusing MANIFEST /tmp/flutter_tools.SHVFNA/flutter_tools_chrome_device.JSFUZR/Default/shared_proto_db/MANIFEST-000001
->>>>>>> 52b7f8fc1f5413880a283c598ef7b01879384a36
+2024/12/16-15:48:15.079 1aa8 Reusing MANIFEST C:\Users\a4ale\AppData\Local\Temp\flutter_tools.4fcd688f\flutter_tools_chrome_device.35af314a\Default\shared_proto_db/MANIFEST-000001
+2024/12/16-15:48:15.080 1aa8 Recovering log #3
+2024/12/16-15:48:15.081 1aa8 Level-0 table #3: started
+2024/12/16-15:48:15.138 1aa8 Level-0 table #3: 23566 bytes OK
+2024/12/16-15:48:15.138 1aa8 Recovering log #4
+2024/12/16-15:48:15.139 1aa8 Level-0 table #4: started
+2024/12/16-15:48:15.428 1aa8 Level-0 table #4: 119165 bytes OK
+2024/12/16-15:48:15.428 1aa8 Recovering log #7
+2024/12/16-15:48:15.430 1aa8 Reusing old log C:\Users\a4ale\AppData\Local\Temp\flutter_tools.4fcd688f\flutter_tools_chrome_device.35af314a\Default\shared_proto_db/000007.log 
+2024/12/16-15:48:15.832 1aa8 Delete type=0 #3
+2024/12/16-15:48:15.911 1aa8 Delete type=0 #4
+2024/12/16-15:48:15.911 1aa8 Delete type=2 #5
+2024/12/16-15:48:15.911 1aa8 Delete type=2 #8
+2024/12/16-15:48:45.250 6e4 Level-0 table #9: started
+2024/12/16-15:48:45.370 6e4 Level-0 table #9: 135750 bytes OK
+2024/12/16-15:48:45.469 6e4 Delete type=0 #7

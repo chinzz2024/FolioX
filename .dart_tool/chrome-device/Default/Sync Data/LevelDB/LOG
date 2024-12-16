@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-2024/12/16-15:34:17.271 2930 Reusing MANIFEST C:\Users\a4ale\AppData\Local\Temp\flutter_tools.1f793cc7\flutter_tools_chrome_device.a107aff4\Default\Sync Data\LevelDB/MANIFEST-000001
-2024/12/16-15:34:17.274 2930 Recovering log #3
-2024/12/16-15:34:17.274 2930 Reusing old log C:\Users\a4ale\AppData\Local\Temp\flutter_tools.1f793cc7\flutter_tools_chrome_device.a107aff4\Default\Sync Data\LevelDB/000003.log 
-=======
-2024/12/16-20:25:35.946 34a4 Reusing MANIFEST /tmp/flutter_tools.SHVFNA/flutter_tools_chrome_device.JSFUZR/Default/Sync Data/LevelDB/MANIFEST-000001
-2024/12/16-20:25:35.947 34a4 Recovering log #3
-2024/12/16-20:25:35.947 34a4 Reusing old log /tmp/flutter_tools.SHVFNA/flutter_tools_chrome_device.JSFUZR/Default/Sync Data/LevelDB/000003.log 
->>>>>>> 52b7f8fc1f5413880a283c598ef7b01879384a36
+2024/12/16-15:48:03.412 6e4 Reusing MANIFEST C:\Users\a4ale\AppData\Local\Temp\flutter_tools.4fcd688f\flutter_tools_chrome_device.35af314a\Default\Sync Data\LevelDB/MANIFEST-000001
+2024/12/16-15:48:03.414 6e4 Recovering log #3
+2024/12/16-15:48:03.416 6e4 Reusing old log C:\Users\a4ale\AppData\Local\Temp\flutter_tools.4fcd688f\flutter_tools_chrome_device.35af314a\Default\Sync Data\LevelDB/000003.log 

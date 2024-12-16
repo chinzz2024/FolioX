@@ -23,10 +23,10 @@ class _PlannerPageState extends State<PlannerPage> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-           Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => StockNewsPage()),
-           );
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+            );
           },
         ),
         backgroundColor: const Color.fromARGB(255, 12, 6, 37),
@@ -88,12 +88,12 @@ class _PlannerPageState extends State<PlannerPage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 1,
-         // You can dynamically set this index
+        // You can dynamically set this index
         onTap: (int index) {
           if (index == 0) {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => StockNewsPage()),
+              MaterialPageRoute(builder: (context) => HomePage()),
             );
           }
         }, // Highlight Planner
