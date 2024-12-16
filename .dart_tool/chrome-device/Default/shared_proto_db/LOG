@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 2024/12/16-15:34:18.882 414 Reusing MANIFEST C:\Users\a4ale\AppData\Local\Temp\flutter_tools.1f793cc7\flutter_tools_chrome_device.a107aff4\Default\shared_proto_db/MANIFEST-000001
 2024/12/16-15:34:18.883 414 Recovering log #7
 2024/12/16-15:34:18.885 414 Reusing old log C:\Users\a4ale\AppData\Local\Temp\flutter_tools.1f793cc7\flutter_tools_chrome_device.a107aff4\Default\shared_proto_db/000007.log 
 2024/12/16-15:34:18.885 414 Delete type=0 #3
 2024/12/16-15:34:18.885 414 Delete type=0 #4
+=======
+2024/12/16-20:25:36.155 34a4 Creating DB /tmp/flutter_tools.SHVFNA/flutter_tools_chrome_device.JSFUZR/Default/shared_proto_db since it was missing.
+2024/12/16-20:25:36.164 34a4 Reusing MANIFEST /tmp/flutter_tools.SHVFNA/flutter_tools_chrome_device.JSFUZR/Default/shared_proto_db/MANIFEST-000001
+>>>>>>> 52b7f8fc1f5413880a283c598ef7b01879384a36

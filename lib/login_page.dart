@@ -38,7 +38,10 @@ class _LoginPageState extends State<LoginPage> {
       // If sign-in is successful, navigate to HomePage
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomePage()),
+
+
+        MaterialPageRoute(builder: (context) => const StockNewsPage()),
+
       );
     } on FirebaseAuthException catch (e) {
       // If an error occurs, display the error message
@@ -122,7 +125,8 @@ class _LoginPageState extends State<LoginPage> {
                   backgroundColor: Colors.black,
                   padding: const EdgeInsets.symmetric(vertical: 16),
                 ),
-                child: const Text("Log In"),
+                child: const Text("Log In",
+                style: TextStyle(color: Colors.white),),
               ),
             ),
             const SizedBox(height: 16),

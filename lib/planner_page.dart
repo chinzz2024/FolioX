@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'option.dart';
+import 'home_page.dart';
 
 class PlannerPage extends StatefulWidget {
   const PlannerPage({super.key});
@@ -19,7 +20,16 @@ class _PlannerPageState extends State<PlannerPage> {
           'Planner Page',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.black,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+           Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => StockNewsPage()),
+           );
+          },
+        ),
+        backgroundColor: const Color.fromARGB(255, 12, 6, 37),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -69,7 +79,7 @@ class _PlannerPageState extends State<PlannerPage> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 24.0, vertical: 12.0),
                   ),
-                  child: const Text('Start a SIP'),
+                  child: const Text('Find Your Plan'),
                 ),
               ],
             ),
@@ -77,7 +87,16 @@ class _PlannerPageState extends State<PlannerPage> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 1, // Highlight Planner
+        currentIndex: 1,
+         // You can dynamically set this index
+        onTap: (int index) {
+          if (index == 0) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => StockNewsPage()),
+            );
+          }
+        }, // Highlight Planner
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.trending_up),
