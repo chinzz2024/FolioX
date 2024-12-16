@@ -1,52 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-<<<<<<< HEAD
-import 'dart:convert';
+import 'package:my_project/login_page.dart';
+import 'package:xml/xml.dart';
+import 'planner_page.dart';
+import 'login_page.dart';
 
 class StockNewsPage extends StatefulWidget {
   const StockNewsPage({Key? key}) : super(key: key);
-=======
-import 'package:html/parser.dart';
-import 'planner_page.dart';
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
->>>>>>> ac381e55c7343aef60a8a6c4d895c269ed1f6092
 
   @override
-  _StockNewsPageState createState() => _StockNewsPageState();
+  State<StockNewsPage> createState() => _StockNewsPageState();
 }
 
-<<<<<<< HEAD
 class _StockNewsPageState extends State<StockNewsPage> {
-  List<dynamic> _newsArticles = [];
+  List<Map<String, String>> _newsArticles = [];
   bool _isLoading = true;
   String _errorMessage = '';
-=======
-class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
-  List<Map<String, String>> newsArticles = [];
-  bool isLoading = true;
->>>>>>> ac381e55c7343aef60a8a6c4d895c269ed1f6092
 
   @override
   void initState() {
     super.initState();
-<<<<<<< HEAD
-    _fetchStockNews();
+    _fetchStockNews(); // Call the API fetch function
   }
 
   Future<void> _fetchStockNews() async {
-    const String apiUrl =
-        'https://api.example.com/stock-news'; // Replace with a real API URL
+    const String apiUrl = 'https://www.moneycontrol.com/rss/MCtopnews.xml'; // RSS feed URL
 
     try {
       final response = await http.get(Uri.parse(apiUrl));
 
       if (response.statusCode == 200) {
+        // Parse the XML response
+        final document = XmlDocument.parse(response.body);
+        final items = document.findAllElements('item'); // Find all <item> elements
+
+        // Extract title and link for each item
+        final fetchedNews = items.map((item) {
+          final title = item.findElements('title').first.text;
+          final link = item.findElements('link').first.text;
+          return {'title': title, 'link': link};
+        }).toList();
+
         setState(() {
-          final data = json.decode(response.body);
-          _newsArticles = data['articles'] ?? [];
+          _newsArticles = fetchedNews;
           _isLoading = false;
         });
       } else {
@@ -55,71 +51,17 @@ class _HomePageState extends State<HomePage> {
           _isLoading = false;
         });
       }
-    } catch (error) {
-      setState(() {
-        _errorMessage = 'An error occurred: $error';
-        _isLoading = false;
-=======
-    scrapeStockNews();
-  }
-
-  Future<void> scrapeStockNews() async {
-
-    final url =
-        'https://www.moneycontrol.com/rss/MCtopnews.xml'; // Public RSS feed for stock news
- 
-    try {
-      final response = await http.get(Uri.parse(url));
-
-      if (response.statusCode == 200) {
-        // Parse the XML response
-        final document = parse(response.body);
-        final items = document.getElementsByTagName('item');
-
-        final fetchedNews = items.map((item) {
-          final title = item.getElementsByTagName('title').first.text;
-          final link = item.getElementsByTagName('link').first.text;
-          return {'title': title, 'link': link};
-        }).toList();
-
-        setState(() {
-          newsArticles = fetchedNews;
-          isLoading = false;
-        });
-      } else {
-        setState(() {
-          isLoading = false;
-        });
-        print('Failed to load the news: ${response.statusCode}');
-      }
     } catch (e) {
       setState(() {
-        isLoading = false;
->>>>>>> ac381e55c7343aef60a8a6c4d895c269ed1f6092
+        _errorMessage = 'An error occurred: $e';
+        _isLoading = false;
       });
-      print('Error: $e');
     }
   }
 
-<<<<<<< HEAD
   void _openArticleUrl(String url) {
-    // Logic to open the URL (e.g., using url_launcher package)
+    // Logic to open the URL (e.g., using the url_launcher package)
     print('Opening URL: $url');
-=======
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-
-    if (index == 1) {
-      // Navigate to Planner page when Planner tab is tapped
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => PlannerPage()), // Navigates to PlannerPage
-      );
-    }
->>>>>>> ac381e55c7343aef60a8a6c4d895c269ed1f6092
   }
 
   @override
@@ -127,11 +69,19 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-<<<<<<< HEAD
           'Stock News',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.black,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+           Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LoginPage()),
+           );
+          },
+        ),
+        backgroundColor: const Color.fromARGB(255, 12, 6, 37),
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
@@ -143,61 +93,30 @@ class _HomePageState extends State<HomePage> {
                     textAlign: TextAlign.center,
                   ),
                 )
-              : ListView.builder(
+              : GridView.builder(
+                  padding: const EdgeInsets.all(8),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2, // Two items per row
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 10,
+                    childAspectRatio: 2, // Adjust to make the cards look good
+                  ),
                   itemCount: _newsArticles.length,
                   itemBuilder: (context, index) {
                     final article = _newsArticles[index];
                     return Card(
-                      margin: const EdgeInsets.symmetric(
-                          vertical: 8, horizontal: 16),
-                      child: ListTile(
-                        title: Text(article['title'] ?? 'No Title'),
-                        subtitle:
-                            Text(article['description'] ?? 'No Description'),
+                      elevation: 4,
+                      child: InkWell(
                         onTap: () {
-                          if (article['url'] != null) {
-                            _openArticleUrl(article['url']);
+                          if (article['link']!.isNotEmpty) {
+                            _openArticleUrl(article['link']!);
                           }
                         },
-=======
-          'Stock News Page',
-          style: TextStyle(color: Colors.white),
-        ),
-        backgroundColor: const Color.fromARGB(255, 12, 6, 37),
-      ),
-      body: isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : newsArticles.isEmpty
-              ? const Center(child: Text('No news available.'))
-              : GridView.builder(
-                  padding: const EdgeInsets.all(10.0),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2, // Two columns
-                    crossAxisSpacing: 10.0, // Horizontal spacing between items
-                    mainAxisSpacing: 10.0, // Vertical spacing between items
-                  ),
-                  itemCount: newsArticles.length,
-                  itemBuilder: (context, index) {
-                    final article = newsArticles[index];
-                    return GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                NewsDetailPage(link: article['link']!),
-                          ),
-                        );
-                      },
-                      child: Card(
-                        elevation: 4,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
                         child: Padding(
-                          padding: const EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
                                 article['title']!,
@@ -205,23 +124,27 @@ class _HomePageState extends State<HomePage> {
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 ),
-                                maxLines: 2,
+                                maxLines: 3,
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ],
                           ),
                         ),
->>>>>>> ac381e55c7343aef60a8a6c4d895c269ed1f6092
                       ),
                     );
                   },
                 ),
-<<<<<<< HEAD
-=======
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped, // Calls the onItemTapped function on tap
-        items: const <BottomNavigationBarItem>[
+        currentIndex: 0, // You can dynamically set this index
+        onTap: (int index) {
+          if (index == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PlannerPage()),
+            );
+          }
+        },
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.trending_up),
             label: 'Stock',
@@ -238,26 +161,6 @@ class _HomePageState extends State<HomePage> {
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
       ),
-    );
-  }
-}
-
-class NewsDetailPage extends StatelessWidget {
-  final String link;
-
-  const NewsDetailPage({required this.link, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('News Detail'),
-        backgroundColor: Colors.black,
-      ),
-      body: Center(
-        child: Text('Visit the full article: $link'),
-      ),
->>>>>>> ac381e55c7343aef60a8a6c4d895c269ed1f6092
     );
   }
 }
