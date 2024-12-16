@@ -22,14 +22,8 @@ class _StockNewsPageState extends State<StockNewsPage> {
     _fetchStockNews(); // Call the API fetch function
   }
 
-<<<<<<< HEAD
-  Future<void> scrapeStockNews() async {
-    final url =
-        'https://www.moneycontrol.com/rss/MCtopnews.xml'; // Public RSS feed for stock news
-=======
   Future<void> _fetchStockNews() async {
     const String apiUrl = 'https://www.moneycontrol.com/rss/MCtopnews.xml'; // RSS feed URL
->>>>>>> 52b7f8fc1f5413880a283c598ef7b01879384a36
 
     try {
       final response = await http.get(Uri.parse(apiUrl));
