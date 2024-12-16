@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:my_project/login_page.dart';
 import 'package:xml/xml.dart';
 import 'planner_page.dart';
 import 'login_page.dart';
