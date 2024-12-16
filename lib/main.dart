@@ -3,6 +3,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'login_page.dart'; // Ensure this file exists and the LoginPage widget is correctly implemented.
 import 'firebase_options.dart'; // Ensure this file is generated using the FlutterFire CLI.
 
+<<<<<<< HEAD
+void main() {
+  runApp(MyApp());
+=======
 void main() async {
   // Ensures Flutter binding is initialized before calling Firebase.initializeApp().
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,6 +18,7 @@ void main() async {
 
   // Start the app.
   runApp(const MyApp());
+>>>>>>> ac381e55c7343aef60a8a6c4d895c269ed1f6092
 }
 
 class MyApp extends StatelessWidget {

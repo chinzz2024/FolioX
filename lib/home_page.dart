@@ -1,23 +1,65 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+<<<<<<< HEAD
+import 'dart:convert';
+
+class StockNewsPage extends StatefulWidget {
+  const StockNewsPage({Key? key}) : super(key: key);
+=======
 import 'package:html/parser.dart';
 import 'planner_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
+>>>>>>> ac381e55c7343aef60a8a6c4d895c269ed1f6092
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _StockNewsPageState createState() => _StockNewsPageState();
 }
 
+<<<<<<< HEAD
+class _StockNewsPageState extends State<StockNewsPage> {
+  List<dynamic> _newsArticles = [];
+  bool _isLoading = true;
+  String _errorMessage = '';
+=======
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   List<Map<String, String>> newsArticles = [];
   bool isLoading = true;
+>>>>>>> ac381e55c7343aef60a8a6c4d895c269ed1f6092
 
   @override
   void initState() {
     super.initState();
+<<<<<<< HEAD
+    _fetchStockNews();
+  }
+
+  Future<void> _fetchStockNews() async {
+    const String apiUrl =
+        'https://api.example.com/stock-news'; // Replace with a real API URL
+
+    try {
+      final response = await http.get(Uri.parse(apiUrl));
+
+      if (response.statusCode == 200) {
+        setState(() {
+          final data = json.decode(response.body);
+          _newsArticles = data['articles'] ?? [];
+          _isLoading = false;
+        });
+      } else {
+        setState(() {
+          _errorMessage = 'Failed to load news. Please try again later.';
+          _isLoading = false;
+        });
+      }
+    } catch (error) {
+      setState(() {
+        _errorMessage = 'An error occurred: $error';
+        _isLoading = false;
+=======
     scrapeStockNews();
   }
 
@@ -53,11 +95,17 @@ class _HomePageState extends State<HomePage> {
     } catch (e) {
       setState(() {
         isLoading = false;
+>>>>>>> ac381e55c7343aef60a8a6c4d895c269ed1f6092
       });
       print('Error: $e');
     }
   }
 
+<<<<<<< HEAD
+  void _openArticleUrl(String url) {
+    // Logic to open the URL (e.g., using url_launcher package)
+    print('Opening URL: $url');
+=======
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -71,6 +119,7 @@ class _HomePageState extends State<HomePage> {
             builder: (context) => PlannerPage()), // Navigates to PlannerPage
       );
     }
+>>>>>>> ac381e55c7343aef60a8a6c4d895c269ed1f6092
   }
 
   @override
@@ -78,6 +127,39 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
+<<<<<<< HEAD
+          'Stock News',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.black,
+      ),
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : _errorMessage.isNotEmpty
+              ? Center(
+                  child: Text(
+                    _errorMessage,
+                    style: const TextStyle(color: Colors.red, fontSize: 16),
+                    textAlign: TextAlign.center,
+                  ),
+                )
+              : ListView.builder(
+                  itemCount: _newsArticles.length,
+                  itemBuilder: (context, index) {
+                    final article = _newsArticles[index];
+                    return Card(
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 8, horizontal: 16),
+                      child: ListTile(
+                        title: Text(article['title'] ?? 'No Title'),
+                        subtitle:
+                            Text(article['description'] ?? 'No Description'),
+                        onTap: () {
+                          if (article['url'] != null) {
+                            _openArticleUrl(article['url']);
+                          }
+                        },
+=======
           'Stock News Page',
           style: TextStyle(color: Colors.white),
         ),
@@ -129,10 +211,13 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                         ),
+>>>>>>> ac381e55c7343aef60a8a6c4d895c269ed1f6092
                       ),
                     );
                   },
                 ),
+<<<<<<< HEAD
+=======
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped, // Calls the onItemTapped function on tap
@@ -172,6 +257,7 @@ class NewsDetailPage extends StatelessWidget {
       body: Center(
         child: Text('Visit the full article: $link'),
       ),
+>>>>>>> ac381e55c7343aef60a8a6c4d895c269ed1f6092
     );
   }
 }
