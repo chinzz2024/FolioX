@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_project/home_page.dart';
 import 'option.dart';
 
 class PlannerPage extends StatefulWidget {
@@ -18,6 +19,15 @@ class _PlannerPageState extends State<PlannerPage> {
         title: const Text(
           'Planner Page',
           style: TextStyle(color: Colors.white),
+        ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+           Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HomePage()),
+           );
+          },
         ),
         backgroundColor: Colors.black,
       ),
@@ -69,7 +79,7 @@ class _PlannerPageState extends State<PlannerPage> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 24.0, vertical: 12.0),
                   ),
-                  child: const Text('Start a SIP'),
+                  child: const Text('Find Your Plan'),
                 ),
               ],
             ),

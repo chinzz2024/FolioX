@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_project/planner_page.dart';
 import 'govt_page.dart';
 
 class EmploymentOptionPage extends StatelessWidget {
@@ -11,6 +12,15 @@ class EmploymentOptionPage extends StatelessWidget {
         title: const Text(
           'Select Employment Type',
           style: TextStyle(color: Colors.white),
+        ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => PlannerPage()),
+           );
+          },
         ),
         backgroundColor: const Color.fromARGB(255, 12, 6, 37),
       ),
