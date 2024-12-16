@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:xml/xml.dart';
+import 'package:url_launcher/url_launcher.dart'; // Import url_launcher
 import 'planner_page.dart';
 import 'login_page.dart';
 
@@ -58,9 +59,15 @@ class _StockNewsPageState extends State<StockNewsPage> {
     }
   }
 
-  void _openArticleUrl(String url) {
-    // Logic to open the URL (e.g., using the url_launcher package)
-    print('Opening URL: $url');
+  Future<void> _openArticleUrl(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Could not open the link')),
+      );
+    }
   }
 
   @override
@@ -74,10 +81,10 @@ class _StockNewsPageState extends State<StockNewsPage> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-           Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => LoginPage()),
-           );
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => LoginPage()),
+            );
           },
         ),
         backgroundColor: const Color.fromARGB(255, 12, 6, 37),
@@ -163,3 +170,4 @@ class _StockNewsPageState extends State<StockNewsPage> {
     );
   }
 }
+
